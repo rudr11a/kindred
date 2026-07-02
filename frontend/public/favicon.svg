@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- Node connections forming a subtle K shape -->
+  <line x1="6" y1="5" x2="6" y2="19" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="6" y1="12" x2="12" y2="12" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="12" y1="12" x2="18" y2="5" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="12" y1="12" x2="18" y2="19" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Nodes (Circles) -->
+  <circle cx="6" cy="5" r="3" fill="#FF6B35" stroke="#F5F5F5" stroke-width="1" />
+  <circle cx="6" cy="12" r="3" fill="#FF6B35" stroke="#F5F5F5" stroke-width="1" />
+  <circle cx="6" cy="19" r="3" fill="#FF6B35" stroke="#F5F5F5" stroke-width="1" />
+  <circle cx="12" cy="12" r="3" fill="#FF6B35" stroke="#F5F5F5" stroke-width="1" />
+  <circle cx="18" cy="5" r="3" fill="#FF6B35" stroke="#F5F5F5" stroke-width="1" />
+  <circle cx="18" cy="19" r="3" fill="#FF6B35" stroke="#F5F5F5" stroke-width="1" />
+</svg>

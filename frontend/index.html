@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kindred</title>
+    <meta name="description" content="Kindred is a verified student collaboration platform for building teams, projects, research groups, and hackathon communities." />
+    <meta property="og:title" content="Kindred - Student Collaboration Platform" />
+    <meta property="og:description" content="Kindred is a verified student collaboration platform for building teams, projects, research groups, and hackathon communities." />
+    <script>
+      (function() {
+        const theme = localStorage.getItem('kindred-theme');
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
