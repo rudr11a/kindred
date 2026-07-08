@@ -6,14 +6,27 @@ import nodemailer from 'nodemailer';
 // Startup logs removed for production
 
 // Create Nodemailer transporter using env variables
+console.log("========== SMTP CONFIG ==========");
+console.log({
+  host: process.env.SMTP_HOST,
+  port: process.env.SMTP_PORT,
+  user: process.env.SMTP_USER,
+  hasPass: !!process.env.SMTP_PASS,
+  passLength: process.env.SMTP_PASS?.length,
+});
+console.log("=================================");
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: process.env.SMTP_PORT === '465',
+  port: Number(process.env.SMTP_PORT),
+  secure: false,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  connectionTimeout: 10000,
+  greetingTimeout: 10000,
+  socketTimeout: 10000,
 });
 
 // Verify connection on startup
@@ -188,7 +201,7 @@ export const sendOtpEmail = async (email: string, otp: string, name: string) => 
 
     await transporter.sendMail(mailOptions);
     console.log(`[Email Service] Verification OTP sent to ${email}`);
-    
+
     return true;
   } catch (error) {
     console.error('Error sending OTP email:', error);
@@ -216,7 +229,7 @@ export const sendPasswordResetEmail = async (email: string, otp: string, name: s
 
     await transporter.sendMail(mailOptions);
     console.log(`[Email Service] Password reset OTP sent to ${email}`);
-    
+
     return true;
   } catch (error) {
     console.error('Error sending reset OTP email:', error);
